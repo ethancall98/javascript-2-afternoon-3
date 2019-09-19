@@ -27,7 +27,10 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// Code Here 
+//Code Here 
+function first(array, callback){
+  callback(array[0])
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -47,7 +50,9 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-//Code Here
+function last(array, callback){
+  callback(array[array.length - 1])
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +71,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num3, num4, callback){
+  callback(num3 * num4)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,7 +93,17 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+function contains(array, name, callback){
 
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === name){
+      return callback(true)
+      }
+    else{
+      return callback(false)
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -106,6 +124,20 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+function uniq(arr, callback){
+  for (var i=0; i < arr.length; i++) {
+    for (var j = arr.length - 1; j >= 0; j--) {
+      if(arr[i] === arr[j] && i !== j){
+        arr.splice(j,1)
+      }
+    }
+  } callback(arr)
+}
+//write a for loop using i 
+// write a for loop using j
+//if statement to compare arr[i] arr[j]
+//if they are equal remove one of them from the array
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +155,12 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+function each(array, callback){
+  for(let i = 0;i < array.length; i++){
+    console.log(array[i], i)
+    callback(array[i], i)
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -139,7 +177,14 @@ each(names, function(item, indice){
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+function getUserById(array, id, callback){
+  for(let i = 0;i < array.length; i++){
+    if(array[i].id === id){
+      
+    }
+  }callback(array)
+
+}
 
 // Do not edit the code below.
 var users = [
